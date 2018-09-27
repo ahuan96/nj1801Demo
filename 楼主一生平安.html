@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>1024</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background: black;
+		}
+		#body {
+			width: 960px;
+			height: 10000px;
+			background: white;
+			margin: 0 auto;
+
+		}
+
+		#video {
+			width: 960px;
+			height: 300px;
+			background: green;
+			color: white;
+			text-align: center;
+			line-height: 300px;
+		}
+
+		#comment  {
+			text-align: center;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+		#comment ul li {
+			list-style: none;
+			line-height: 60px;
+			width: 900px;
+			height: auto;
+			border-bottom: 1px solid #ccc;
+			text-align: left;
+			margin-left: 30px;
+		}
+
+		#comment button {
+			margin-top: 20px;
+		}
+	</style>
+<script type="text/javascript">
+	window.onload = function(){
+		
+		var content = document.getElementById('content');
+		var sub = document.getElementById('sub');
+		var ul = document.getElementsByTagName('ul')[0];
+		//第一次发表时标记
+		var n=1;
+		//点击提交按钮时函数
+		sub.onclick = function(){
+			
+			if(n){		//如果是第一次输入，覆盖初始位置
+				ul.innerHTML = '<li>'+content.value+'</li>';
+				n=0;
+			}else{		//后续输入添加
+				ul.innerHTML = ul.innerHTML+'<li>'+content.value+'</li>';
+			}
+		}
+	}
+	
+</script>
+</head>
+<body>
+<div id="body">
+	
+	<div id="video"><h1>89983289**&*(-120330)</h1></div>
+	<div id="comment">
+		<textarea id="content" cols="108" rows="5" placeholder="请各位麻烦说点什么吧..."></textarea>
+		<button id="sub">阁下，请注意文明发表评论</button>
+		<ul>
+			<li>还没有狼友留下任何痕迹</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

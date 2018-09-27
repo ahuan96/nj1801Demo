@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding: 0;
+			  margin: 0;
+			}
+			ul{
+				width: 320px;
+				height: 40px;
+				background: orange;
+				display: flex;
+				margin: 100px auto;
+			}
+			
+		ul li{	
+				list-style: none;
+				width: 80px;
+				height: 40px;
+				box-sizing: border-box;
+				border: 1px solid #ccc;
+				text-align: center;
+				line-height: 40px;
+				cursor: pointer;
+			}			
+		.active{
+			
+			background: #fff;
+			}	
+			
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var navs = document.getElementsByTagName('li');
+				//console.log(navs)
+				for(i in navs){
+					navs[i].onclick = function(){
+						for(j in navs){
+							navs[j].className = '';
+						}
+						this.className = 'active'
+					}
+				}
+			}
+			
+			
+			
+			
+		</script>
+		
+		
+	</head>
+	<body>
+		<ul>
+			<li class="active">国内</li>
+			<li>国外</li>
+			<li>亚洲</li>
+			<li>欧美</li>
+		</ul>
+	</body>
+</html>

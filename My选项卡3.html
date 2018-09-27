@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>选项卡</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#tab .head {
+				width: 408px;
+				height: 30px;
+			}
+			
+			#tab .head ul li {
+				width: 100px;
+				height: 30px;
+				border: 1px solid #ccc;
+				list-style: none;
+				float: left;
+				text-align: center;
+				line-height: 30px;
+				background: pink;
+				display: block;
+			}
+			
+			#tab .head ul .active {
+				background: white;
+			}
+			
+			#tab .content {
+				width: 406px;
+				height: 400px;
+				border: 1px solid #ccc;
+				display: none;
+			}
+			
+			#tab .body {
+				width: 408px;
+			}
+			
+			#tab .body .active {
+				display: block;
+			}
+		</style>
+<script type="text/javascript">
+		function change(obj,index){
+			
+			var lis = document.getElementsByTagName('li');
+			var contents = document.getElementsByClassName('content');
+			console.log(contents)
+			for(var i = 0; i<lis.length ;i++){
+				lis[i].className = '';
+				contents[i].className = 'content';
+			}
+			obj.className = 'active'
+			contents[index].className = 'content active'
+			
+		}
+	
+	
+	
+</script>
+	</head>
+
+	<body>
+		<div id="tab">
+
+			<div class="head">
+				<ul>
+					<li class="active" onclick="change(this, 0)">国内</li>
+					<li onclick="change(this, 1)">国外</li>
+					<li onclick="change(this, 2)">亚洲</li>
+					<li onclick="change(this, 3)">欧美</li>
+				</ul>
+			</div>
+			<div class="body">
+				<div class="content active">
+					<h1>这里是国内</h1>
+				</div>
+				<div class="content">
+					<h1>这里是国外</h1>
+				</div>
+				<div class="content">
+					<h1>这里是亚洲</h1>
+				</div>
+				<div class="content">
+					<h1>这里是欧美</h1>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

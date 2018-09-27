@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="post">
+			<input  type="text" name="" id="txt" value="" />
+			<input id="btn" type="submit" disabled="disabled" value="发送短信验证码"/>
+		</form>
+		
+		<script type="text/javascript">
+			var txt =document.getElementById('txt');
+			var btn = document.getElementById('btn');
+			var pat = /^\d{6,12}$/
+			//console.log(btn)
+			txt.onkeyup = function(){
+				//console.log(btn)
+				btn.disabled = true;
+				console.log(txt.value)
+				if(txt.value && pat.test(txt.value)){
+					//console.log('j')
+					btn.disabled = false;
+				}
+			}
+		btn.onclick = function(){
+			btn.disabled = true;
+			var t=5;
+			var endTime = setInterval(function(){
+				//
+
+				btn.value = t + '秒之后重新发送' ;
+				t--;
+				if(t<0){
+					clearInterval(endTime);
+					btn.value = '请发送短信验证码';
+					btn.disabled = false;
+				}
+			},1000)
+		}
+		</script>
+	</body>
+</html>

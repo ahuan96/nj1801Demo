@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			#all {
+				width: 480px;
+				height: 200px;
+				margin: 100px auto;
+				background: yellow;
+			}
+			
+			ul {
+				width: 480px;
+				height: 40px;
+				background: orange;
+				display: flex;
+			}
+			
+			ul li {
+				list-style: none;
+				width: 80px;
+				height: 40px;
+				box-sizing: border-box;
+				border: 1px solid #ccc;
+				text-align: center;
+				line-height: 40px;
+				cursor: pointer;
+			}
+			
+			ul .active {
+				background: #fff;
+			}
+			
+			#main div {
+				display: none;
+			}
+			
+			#main .active {
+				display: block;
+			}
+		</style>
+
+		<script type="text/javascript">
+			window.onload = function() {
+
+				var navs = document.getElementsByTagName('li');
+				var divs = document.getElementById('main').getElementsByTagName('div')
+				console.log(divs)
+
+				//导航栏设置
+				for(i in navs) {
+					navs[i].index = i;
+					navs[i].onclick = function() {
+						for(var j = 0; j < navs.length; j++) {
+							navs[j].className = '';
+							divs[j].style.display = 'none';
+						}
+						this.className = 'active';
+						divs[this.index].style.display = 'block';
+					}
+				}
+			}
+
+			//内容跟随显示
+		</script>
+
+	</head>
+
+	<body>
+		<div id="all">
+
+			<ul>
+				<li class="active">倔强青铜</li>
+				<li>秩序白银</li>
+				<li>荣耀黄金</li>
+				<li>尊贵铂金</li>
+				<li>永恒钻石</li>
+				<li>荣耀王者</li>
+			</ul>
+			<div id="main">
+
+				<div id="" class="active">
+					<h1>倔强青铜</h1>
+				</div>
+				<div id="">
+					<h1>秩序白银</h1>
+				</div>
+				<div id="">
+					<h1>荣耀黄金</h1>
+				</div>
+				<div id="">
+					<h1>尊贵铂金</h1>
+				</div>
+				<div id="">
+					<h1>永恒钻石</h1>
+				</div>
+				<div id="">
+					<h1>荣耀王者</h1>
+				</div>
+
+			</div>
+		</div>
+	</body>
+
+</html>
